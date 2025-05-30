@@ -6,16 +6,31 @@
     <title>See you space cowboy...</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <!-- <body class="bg-gradient-to-br from-blue-900 via-purple-800 to-pink-700 min-h-screen flex flex-col"> -->
+
   <body class="bg-black min-h-screen flex flex-col">
 
-    <!-- Título com glassmorphism -->
-    <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center gap-6">
-      <img src="https://i.pinimg.com/736x/08/49/e7/0849e7f3a32372813c218020e0bd4062.jpg" alt="Foto" class="w-24 h-24 rounded-full border-4 border-white/30 shadow-md" />
-      <div>
-        <h1 class="text-white text-4xl font-bold">Pedro Rocha</h1>
-        <p class="text-white/80 text-lg">Site para os links da escola sla kskksks</p>
+    <!-- Título com glassmorphism e player alinhado à direita e centralizado -->
+    <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center justify-between">
+
+      <!-- Lado esquerdo: imagem + texto -->
+      <div class="flex items-center gap-6">
+        <img src="https://i.pinimg.com/736x/08/49/e7/0849e7f3a32372813c218020e0bd4062.jpg" alt="Foto" class="w-24 h-24 rounded-full border-4 border-white/30 shadow-md" />
+        <div>
+          <h1 class="text-white text-4xl font-bold">Pedro Rocha</h1>
+          <p class="text-white/80 text-lg">Site para os links da escola sla kskksks</p>
+        </div>
       </div>
+
+      <!-- Lado direito: player Spotify, centralizado verticalmente -->
+      <div class="hidden md:block w-[350px] h-[80px]">
+        <iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/1V24r8WsAP7m9MUtWN0lqA?utm_source=generator" 
+          width="100%" height="150" frameborder="1" allowfullscreen="1"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+
     </header>
 
     <!-- Conteúdo principal com lista -->

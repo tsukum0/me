@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>See you space cowboy...</title>
-    <link rel="icon" href="https://media.discordapp.net/attachments/1371319048071024672/1378202703557165137/19_Sem_Titulo_20250530234435.png?ex=683bbeca&is=683a6d4a&hm=3faaf40142600dfaa036245eee8ed3b34a21eaf24e297130e8dcf416c08cc9fe&=&format=webp&quality=lossless&width=960&height=960" type="image/png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E quem disse que isso é problema meu?</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/847/847969.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-  <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
+<body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://images.wallpapersden.com/image/download/the-mandalorian-2_bGhnbGyUmZqaraWkpJRobWllrWdma2U.jpg');">
 
-    <!-- Título com glassmorphism e player alinhado à direita e centralizado -->
-    <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center justify-between">
-
-      <!-- Lado esquerdo: imagem + texto -->
-      <div class="flex items-center gap-6">
-        <img src="https://i.pinimg.com/736x/08/49/e7/0849e7f3a32372813c218020e0bd4062.jpg" alt="Foto" class="w-24 h-24 rounded-full border-4 border-white/30 shadow-md" />
-        <div>
-          <h1 class="text-white text-4xl font-bold">Pedro Rocha</h1>
-          <p class="text-white/80 text-lg">Site para os links da escola sla kskksks</p>
-        </div>
+  <!-- Header: Título e Foto -->
+  <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center justify-between flex-wrap">
+    <div class="flex items-center gap-6">
+      <img src="https://i.pinimg.com/736x/08/49/e7/0849e7f3a32372813c218020e0bd4062.jpg" alt="Foto" class="w-24 h-24 rounded-full border-4 border-white/30 shadow-md" />
+      <div>
+        <h1 class="text-white text-4xl font-bold">Pedro Rocha</h1>
+        <p class="text-white/80 text-lg">Dev iniciante, escravizado pela escola</p>
       </div>
+    </div>
+  </header>
 
-      <!-- Lado direito: player Spotify, centralizado verticalmente -->
-      <div class="hidden md:block w-[350px] h-[80px]">
-        <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/track/1V24r8WsAP7m9MUtWN0lqA?utm_source=generator" 
-          width="100%" height="150" frameborder="1" allowfullscreen="1"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
-        </iframe>
-      </div>
+  <!-- Main Sections -->
+  <main class="flex-1 m-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-    </header>
+    <!-- coiso la -->
+    <section class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white col-span-1 lg:col-span-1">
+      <h2 class="text-2xl font-semibold mb-4">Sobre mim</h2>
+      <p class="text-white/80 leading-relaxed">
+        H
+      </p>
+    </section>
 
-    <!-- Conteúdo principal com lista -->
-    <main class="flex-1 m-8 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white overflow-auto">
+    <!-- Links -->
+    <section class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white col-span-1 lg:col-span-1">
       <h2 class="text-2xl font-semibold mb-4">Links</h2>
       <ul class="list-disc pl-5 space-y-2">
-        <li>Vazio</li>
+        <li><a href="#" class="text-blue-300 hover:underline">Site de links</a></li>
+        <li><a href="#" class="text-blue-300 hover:underline">Discord</a></li>
+        <li><a href="#" class="text-blue-300 hover:underline">Projetos no GitHub</a></li>
       </ul>
-    </main>
+    </section>
 
-    <!-- Footer simples -->
-    <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm">
-      May the fourth be with you.
-    </footer>
-    <!-- May the fourth be with you. -->
+    <!-- Redes sociais -->
+    <section class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white col-span-1 lg:col-span-1">
+      <h2 class="text-2xl font-semibold mb-4">Redes sociais</h2>
+      <div class="flex gap-4 text-3xl">
+        <a href="https://discord.com" target="_blank" class="hover:text-pink-400"><img src="https://th.bing.com/th/id/OSAAS.99A2A286153FAFF801A56A99473942E5?w=72&h=72&c=17&rs=1&o=6&pid=TechQna" class="w-8 h-8" /></a>
+        <a href="https://github.com/tsukum0" target="_blank" class="hover:text-gray-300"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="w-8 h-8" /></a>
+      </div>
+    </section>
 
-  </body>
+  </main>
+
+  <!-- Footer -->
+  <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm">
+    © 2025 Pedro Rocha e TailwindCSS.
+  </footer>
+
+</body>
 </html>

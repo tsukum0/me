@@ -10,26 +10,30 @@
 
   <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
+    <!-- Botão de Tradução -->
+    <div class="fixed top-6 left-6 z-50">
+      <button onclick="toggleLanguage()" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-xl text-sm shadow-md hover:bg-white/20 transition">
+        🌐 Traduzir
+      </button>
+    </div>
+
     <!-- Botão de Voltar -->
     <a href="/me/" class="fixed top-6 right-6 z-50">
       <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
-      ⬅ Home
+        ⬅ <span data-lang="home">Home</span>
       </div>
     </a>
 
     <!-- Título com glassmorphism e player alinhado à direita e centralizado -->
     <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center justify-between">
-
-      <!-- Lado esquerdo: imagem + texto -->
       <div class="flex items-center gap-6">
         <img src="https://i.pinimg.com/736x/08/49/e7/0849e7f3a32372813c218020e0bd4062.jpg" alt="Foto" class="w-24 h-24 rounded-full border-4 border-white/30 shadow-md" />
         <div>
-          <h1 class="text-white text-4xl font-bold">Pedro Rocha</h1>
-          <p class="text-white/80 text-lg">Site para os links da escola sla kskksks</p>
+          <h1 class="text-white text-4xl font-bold" data-lang="title">Pedro Rocha</h1>
+          <p class="text-white/80 text-lg" data-lang="desc">Site para os links da escola sla kskksks</p>
         </div>
       </div>
 
-      <!-- Lado direito: player Spotify, centralizado verticalmente -->
       <div class="hidden md:block w-[350px] h-[80px]">
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/track/0Mb20VmqR2lvtgbEermW2v?utm_source=generator" 
@@ -38,22 +42,15 @@
           loading="lazy">
         </iframe>
       </div>
-
     </header>
 
-    <!-- Conteúdo principal com lista -->
+    <!-- Conteúdo principal -->
     <main class="flex-1 m-8 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white overflow-auto">
-      <h2 class="text-2xl font-semibold mb-4">Links</h2>
+      <h2 class="text-2xl font-semibold mb-4" data-lang="links">Links</h2>
       <ul class="list-disc pl-5 space-y-2">
-        <li><a href="../" class="text-blue-300 hover:underline">Voltar</a></li>
+        <li><a href="../" class="text-blue-300 hover:underline" data-lang="back">Voltar</a></li>
       </ul>
     </main>
 
-    <!-- Footer simples -->
-    <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm">
-      May the fourth be with you.
-    </footer>
-    <!-- May the fourth be with you. -->
-
-  </body>
-</html>
+    <!-- Footer -->
+    <

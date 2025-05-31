@@ -6,6 +6,23 @@
   <title>E quem disse que isso é problema meu?</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/847/847969.png" type="image/png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+</style>
+
 </head>
 
 <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
@@ -53,15 +70,14 @@
 
   </main>
 
-  <!-- Card flutuante no canto inferior direito com links de amigos -->
-  <div class="fixed bottom-6 right-6 w-72 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-4 text-white z-50">
-    <h2 class="text-xl font-semibold mb-2">Sites dos meus amigos</h2>
-    <ul class="list-disc pl-5 space-y-1 text-sm">
-      <li><a href="https://myfalserealm.carrd.co/" target="_blank" class="text-blue-300 hover:underline">Vannicchi</a></li>
-      <li><a href="../" target="_blank" class="text-blue-300 hover:underline">Batman</a></li>
-      <li><a href="../" target="_blank" class="text-blue-300 hover:underline">Superman</a></li>
-    </ul>
-  </div>
+<div class="hidden sm:block fixed bottom-6 right-6 w-72 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-4 text-white z-50 opacity-0 translate-y-4 animate-fade-in">
+  <h2 class="text-xl font-semibold mb-2">Sites dos meus amigos</h2>
+  <ul class="list-disc pl-5 space-y-1 text-sm">
+    <li><a href="https://myfalserealm.carrd.co/" target="_blank" class="text-blue-300 hover:underline">Vannicchi</a></li>
+    <li><a href="../" target="_blank" class="text-blue-300 hover:underline">Batman</a></li>
+    <li><a href="../" target="_blank" class="text-blue-300 hover:underline">Superman</a></li>
+  </ul>
+</div>
 
   <!-- Footer -->
   <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm">

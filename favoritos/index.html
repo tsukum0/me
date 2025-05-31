@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sério que você lê isso?</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/847/847969.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animações on scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(1rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      opacity: 0;
+      transform: translateY(1rem);
+      animation: fade-in 0.8s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-cover bg-center overflow-y-scroll" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
+
+  <!-- Header -->
+  <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center justify-between flex-wrap transition duration-300 hover:shadow-2xl">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+      <img src="https://i.pinimg.com/736x/08/49/e7/0849e7f3a32372813c218020e0bd4062.jpg" alt="Icon de perfil" class="w-24 h-24 rounded-full border-4 border-white/30 shadow-md" />
+      <div>
+        <h1 class="text-white text-4xl font-bold">Pedro Rocha</h1>
+        <p class="text-white/80 text-lg">Coisas que eu gosto</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="flex-1 mx-8 mb-8 space-y-8">
+
+    <!-- Músicas Favoritas -->
+    <section data-aos="fade-up" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white">
+      <h2 class="text-2xl font-semibold mb-4">🎵 Músicas Favoritas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3qzgGSGtGAcXGZJ7UG68hr?utm_source=generator&theme=0" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1V24r8WsAP7m9MUtWN0lqA?utm_source=generator&theme=0" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6I9VzXrHxO9rA9A5euc8Ak?utm_source=generator&theme=0" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- Jogos Favoritos -->
+    <section data-aos="fade-up" data-aos-delay="100" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white">
+      <h2 class="text-2xl font-semibold mb-4">🎮 Jogos Favoritos</h2>
+      <ul class="list-disc pl-5 space-y-2 text-white/90">
+        <li>Need For Speed: Underground 2</li>
+        <li>Super Mario World</li>
+        <li>Forza Horizon 3</li>
+        <li>GTA: San Andreas</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm mt-auto">
+    Holy shit, here we go again...
+  </footer>
+
+  <!-- Iniciar AOS -->
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

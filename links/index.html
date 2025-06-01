@@ -3,29 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>See you space cowboy...</title>
+    <title data-lang="title">See you space cowboy...</title>
     <link rel="icon" href="https://media.discordapp.net/attachments/1371319048071024672/1378202703557165137/19_Sem_Titulo_20250530234435.png?ex=683bbeca&is=683a6d4a&hm=3faaf40142600dfaa036245eee8ed3b34a21eaf24e297130e8dcf416c08cc9fe&=&format=webp&quality=lossless&width=960&height=960" type="image/png" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
-    <!-- Botão de Voltar -->
-    <a href="/me/" class="fixed top-6 right-6 z-50">
-      <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
-      ⬅ Home
-      </div>
-    </a>
+    <!-- Botões no canto superior -->
+    <div class="fixed top-6 right-6 z-50 flex gap-3">
+      <!-- Botão de Voltar -->
+      <a href="/me/">
+        <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
+          ⬅ <span data-lang="home">Home</span>
+        </div>
+      </a>
+
+      <!-- Botão de Tradução -->
+      <button onclick="toggleLanguage()">
+        <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
+          🌐 <span data-lang="translate">Traduzir</span>
+        </div>
+      </button>
+    </div>
 
     <!-- Título com glassmorphism e player alinhado à direita e centralizado -->
     <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center justify-between">
-
       <!-- Lado esquerdo: imagem + texto -->
       <div class="flex items-center gap-6">
         <img src="https://i.pinimg.com/736x/08/49/e7/0849e7f3a32372813c218020e0bd4062.jpg" alt="Foto" class="w-24 h-24 rounded-full border-4 border-white/30 shadow-md" />
         <div>
-          <h1 class="text-white text-4xl font-bold">Pedro Rocha</h1>
-          <p class="text-white/80 text-lg">Site para os links da escola sla kskksks</p>
+          <h1 class="text-white text-4xl font-bold" data-lang="name">Pedro Rocha</h1>
+          <p class="text-white/80 text-lg" data-lang="desc">Site para os links da escola sla kskksks</p>
         </div>
       </div>
 
@@ -38,22 +47,57 @@
           loading="lazy">
         </iframe>
       </div>
-
     </header>
 
     <!-- Conteúdo principal com lista -->
     <main class="flex-1 m-8 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white overflow-auto">
-      <h2 class="text-2xl font-semibold mb-4">Links</h2>
+      <h2 class="text-2xl font-semibold mb-4" data-lang="links">Links</h2>
       <ul class="list-disc pl-5 space-y-2">
-        <li><a href="../" class="text-blue-300 hover:underline">Voltar</a></li>
+        <li><a href="../" class="text-blue-300 hover:underline" data-lang="back">Voltar</a></li>
       </ul>
     </main>
 
     <!-- Footer simples -->
-    <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm">
+    <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm" data-lang="footer">
       May the fourth be with you.
     </footer>
-    <!-- May the fourth be with you. -->
+
+    <!-- Script de Tradução -->
+    <script>
+      let currentLang = 'pt';
+
+      const translations = {
+        pt: {
+          title: 'See you space cowboy...',
+          home: 'Home',
+          translate: 'Traduzir',
+          name: 'Pedro Rocha',
+          desc: 'Site para os links da escola sla kskksks',
+          links: 'Links',
+          back: 'Voltar',
+          footer: 'May the fourth be with you.'
+        },
+        en: {
+          title: 'See you space cowboy...',
+          home: 'Home',
+          translate: 'Translate',
+          name: 'Pedro Rocha',
+          desc: 'Site for school links and random stuff lol',
+          links: 'Links',
+          back: 'Go back',
+          footer: 'May the fourth be with you.'
+        }
+      };
+
+      function toggleLanguage() {
+        currentLang = currentLang === 'pt' ? 'en' : 'pt';
+
+        for (const [key, value] of Object.entries(translations[currentLang])) {
+          const el = document.querySelector(`[data-lang="${key}"]`);
+          if (el) el.textContent = value;
+        }
+      }
+    </script>
 
   </body>
 </html>

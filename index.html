@@ -70,30 +70,25 @@
     
   <!-- Coluna 1: Sobre mim + Favoritos -->
   <div class="flex flex-col gap-4 h-full">
-
     <!-- Sobre mim -->
-    <section data-aos="fade-up" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-4 text-white">
+    <section data-aos="fade-up" class="flex-grow backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-4 text-white">
       <h2 data-lang="sobre" class="text-xl font-semibold mb-2">Sobre mim</h2>
-      <p data-lang="sobre-texto" class="text-white/80 text-sm leading-relaxed">É fogo visse
-        a
-        a
-        a 
-      </p>
+      <p data-lang="sobre-texto" class="text-white/80 text-sm leading-relaxed">É fogo visse</p>
     </section>
 
-    <!-- Favoritos -->
-    <section data-aos="fade-up" data-aos-delay="50" class="flex-1 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-4 text-white">
-      <h2 class="text-xl font-semibold mb-2">Coisas favoritas</h2>
-      <ul class="list-disc pl-5 text-white/80 space-y-2">
-        <li>Música: <span class="text-white">Heavy Metal, Freestyle</span></li>
-        <li>Comida: <span class="text-white">Hambúrguer</span></li>
-        <li>Filme: <span class="text-white">Interestelar, Star Wars</span></li>
-        <li>Série: <span class="text-white">N/a</span></li>
-        <li>Cor favorita: <span class="text-white">Preto</span></li>
-      </ul>
-    <a href="/me/favoritos" class="inline-block mt-4 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-xl transition duration-300">Ver favoritos</a>
-    </section>
-  </div>
+      <!-- Favoritos -->
+      <section data-aos="fade-up" data-aos-delay="50" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-4 text-white h-[280px]">
+        <h2 class="text-xl font-semibold mb-2">Coisas favoritas</h2>
+        <ul class="list-disc pl-5 text-white/80 space-y-2"></ul>
+          <li>Música: <span class="text-white">Heavy Metal, Freestyle</span></li>
+          <li>Comida: <span class="text-white">Hambúrguer</span></li>
+          <li>Filme: <span class="text-white">Interestelar, Star Wars</span></li>
+          <li>Série: <span class="text-white">N/a</span></li>
+          <li>Cor favorita: <span class="text-white">Preto</span></li>
+        </ul>
+        <a href="/me/favoritos" class="inline-block bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-xl transition duration-300">Ver favoritos</a>
+      </section>
+    </div>
 
     <section data-aos="fade-up" data-aos-delay="100" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white">
       <h2 data-lang="links" class="text-2xl font-semibold mb-4">Links</h2>
@@ -181,7 +176,7 @@
 
     function applyTranslations() {
       for (const [key, value] of Object.entries(translations[currentLang])) {
-        document.querySelectorAll(`[data-lang="${key}"]`).forEach(el => {
+        document.querySelectorAll([data-lang="${key}"]).forEach(el => {
           el.textContent = value;
         });
       }

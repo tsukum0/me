@@ -179,11 +179,11 @@
 
     function applyTranslations() {
       for (const [key, value] of Object.entries(translations[currentLang])) {
-      document.querySelectorAll(`[data-lang="${key}"]`).forEach(el => {
-      el.textContent = value;
-    });
-  }
-}
+        document.querySelectorAll([data-lang="${key}"]).forEach(el => {
+          el.textContent = value;
+        });
+      }
+    }
 
     function toggleLanguage() {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';

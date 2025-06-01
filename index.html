@@ -152,26 +152,26 @@
   <script>
     const translations = {
       'pt': {
-        'title': 'Pedro Rocha',
-        'subtitle': 'Dev iniciante, escravizado pela escola',
-        'sobre': 'Sobre mim',
-        'sobre-texto': 'É fogo visse',
-        'links': 'Links',
-        'redes': 'Redes sociais',
-        'servidor': 'Servidor do Pedro',
-        'amigos': 'Sites dos meus amigos',
-        'traduzir': 'Translate'
+      'title': 'Pedro Rocha',
+      'subtitle': 'Dev iniciante, escravizado pela escola',
+      'sobre': 'Sobre mim',
+      'sobre-texto': 'É fogo, visse?',
+      'links': 'Links',
+      'redes': 'Redes sociais',
+      'servidor': 'Servidor do Pedro',
+      'amigos': 'Sites dos meus amigos',
+      'traduzir': 'Translate'
       },
       'en': {
-        'title': 'Pedro Rocha',
-        'subtitle': 'Beginner dev, enslaved by school',
-        'sobre': 'About me',
-        'sobre-texto': "It's tough, you know?",
-        'links': 'Links',
-        'redes': 'Social media',
-        'servidor': "Pedro's Server",
-        'amigos': "My friends' sites",
-        'traduzir': 'Traduzir'
+      'title': 'Pedro Rocha',
+      'subtitle': 'Beginner dev, suffering through school',
+      'sobre': 'About me',
+      'sobre-texto': "It's rough, right?",
+      'links': 'Links',
+      'redes': 'Social media',
+      'servidor': "Pedro's Server",
+      'amigos': "My friends' sites",
+      'traduzir': 'Traduzir'
       }
     };
 
@@ -179,11 +179,11 @@
 
     function applyTranslations() {
       for (const [key, value] of Object.entries(translations[currentLang])) {
-        document.querySelectorAll([data-lang="${key}"]).forEach(el => {
-          el.textContent = value;
-        });
-      }
-    }
+      document.querySelectorAll(`[data-lang="${key}"]`).forEach(el => {
+      el.textContent = value;
+    });
+  }
+}
 
     function toggleLanguage() {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';

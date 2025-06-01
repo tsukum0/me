@@ -155,12 +155,14 @@
       'title': 'Pedro Rocha',
       'subtitle': 'Dev iniciante, escravizado pela escola',
       'sobre': 'Sobre mim',
-      'sobre-texto': 'É fogo, visse?',
+      'sobre-texto': 'É fogo, visse',
       'links': 'Links',
       'redes': 'Redes sociais',
       'servidor': 'Servidor do Pedro',
       'amigos': 'Sites dos meus amigos',
-      'traduzir': 'Translate'
+      'traduzir': 'Translate',
+      'favoritas': '',
+      'favoritas-text': ''
       },
       'en': {
       'title': 'Pedro Rocha',
@@ -171,28 +173,23 @@
       'redes': 'Social media',
       'servidor': "Pedro's Server",
       'amigos': "My friends' sites",
-      'traduzir': 'Traduzir'
+      'traduzir': 'Traduzir',
+      'favoritas': '',
+      'favoritas-text': ''
       }
     };
 
-    let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('en') ? 'en' : 'pt');
-
-    function applyTranslations() {
-      for (const [key, value] of Object.entries(translations[currentLang])) {
-        document.querySelectorAll([data-lang="${key}"]).forEach(el => {
-          el.textContent = value;
-        });
-      }
-    }
+    let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('pt') ? 'en' : 'pt');
 
     function toggleLanguage() {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';
-      localStorage.setItem('lang', currentLang);
-      applyTranslations();
-    }
 
-    window.addEventListener('DOMContentLoaded', applyTranslations);
-  </script>
+      for (const [key, value] of Object.entries(translations[currentLang])) {
+        const el = document.querySelector(`[data-lang="${key}"]`);
+        if (el) el.textContent = value;
+      }
+    }
+    </script>
 
 </body>
 </html>

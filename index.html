@@ -65,31 +65,22 @@
     </div>
   </header>
 
-  <!-- Sobre mim + Coisas favoritas agrupados -->
-  <div class="flex flex-col gap-4" data-aos="fade-up">
-
-    <!-- Sobre mim (metade do card normal) -->
-    <section class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white h-full flex-1">
+  <!-- Main Content -->
+  <main class="flex-1 m-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    
+    <section data-aos="fade-up" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white">
       <h2 data-lang="sobre" class="text-2xl font-semibold mb-4">Sobre mim</h2>
       <p data-lang="sobre-texto" class="text-white/80 leading-relaxed">É fogo visse</p>
     </section>
 
-    <!-- Coisas favoritas (metade do card normal) -->
-    <section class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white h-full flex-1">
-      <h2 class="text-2xl font-semibold mb-4">Coisas favoritas</h2>
-      <ul class="list-disc pl-5 text-white/80 space-y-2">
-        <li>Música: <span class="text-white">Heavy Metal, Freestyle</span></li>
-        <li>Comida: <span class="text-white">Hambúrguer</span></li>
-        <li>Filme: <span class="text-white">Interestelar, Star Wars</span></li>
-        <li>Série: <span class="text-white">N/a</span></li>
-        <li>Cor favorita: <span class="text-white">Preto</span></li>
+    <section data-aos="fade-up" data-aos-delay="100" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white">
+      <h2 data-lang="links" class="text-2xl font-semibold mb-4">Links</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><a href="/me/favoritos/" class="text-blue-300 hover:underline">Favoritos</a></li>
+        <li><a href="/me/links/" class="text-blue-300 hover:underline">Mais links</a></li>
+        <li><a href="https://github.com/tsukum0?tab=repositories" class="text-blue-300 hover:underline">Projetos no GitHub</a></li>
       </ul>
-
-      <button onclick="location.href='/me/favoritos'" class="mt-6 w-full backdrop-blur-md bg-white/10 border border-white/30 text-white py-2 px-4 rounded-xl hover:bg-white/20 transition duration-300">
-      Ver mais
-      </button>
     </section>
-  </div>
 
     <section data-aos="fade-up" data-aos-delay="200" class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white">
       <h2 data-lang="redes" class="text-2xl font-semibold mb-4">Redes sociais</h2>

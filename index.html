@@ -34,11 +34,10 @@
 
 <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
-    <!-- Botão de Tradução -->
-    <button onclick="toggleLanguage()" class="text-white hover:bg-white/20 transition duration-300 px-4 py-2 rounded-lg text-sm border border-white/10">
+  <!-- Botão de Tradução -->
+  <button id="translate-btn" onclick="toggleLanguage()" class="text-white hover:bg-white/20 transition duration-300 px-4 py-2 rounded-lg text-sm border border-white/10 fixed top-6 left-6 z-50">
     🌐 <span data-lang="traduzir">Traduzir</span>
-    </button>
-  </div>
+  </button>
 
   <!-- Header -->
   <header class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl m-8 p-6 flex items-center justify-between flex-wrap transition duration-300 hover:shadow-2xl">
@@ -125,8 +124,6 @@
 
   <!-- Tradução -->
   <script>
-    let currentLang = 'pt';
-
     const translations = {
       'pt': {
         'title': 'Pedro Rocha',
@@ -137,6 +134,7 @@
         'redes': 'Redes sociais',
         'servidor': 'Servidor do Pedro',
         'amigos': 'Sites dos meus amigos',
+        'traduzir': 'Traduzir'
       },
       'en': {
         'title': 'Pedro Rocha',
@@ -147,17 +145,28 @@
         'redes': 'Social media',
         'servidor': "Pedro's Server",
         'amigos': "My friends' sites",
+        'traduzir': 'Translate'
       }
     };
 
-    function toggleLanguage() {
-      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+    let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('en') ? 'en' : 'pt');
 
+    function applyTranslations() {
       for (const [key, value] of Object.entries(translations[currentLang])) {
-        const el = document.querySelector(`[data-lang="${key}"]`);
-        if (el) el.textContent = value;
+        document.querySelectorAll(`[data-lang="${key}"]`).forEach(el => {
+          el.textContent = value;
+        });
       }
     }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      localStorage.setItem('lang', currentLang);
+      applyTranslations();
+    }
+
+    window.addEventListener('DOMContentLoaded', applyTranslations);
   </script>
+
 </body>
 </html>

@@ -34,15 +34,16 @@
 
 <body class="min-h-screen flex flex-col bg-cover bg-center overflow-y-auto" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
-
+  <!-- Botões -->
+  <div class="flex gap-2 p-4">
     <!-- Botão de Home -->
     <a href="/me/" class="text-white hover:bg-white/20 transition duration-300 px-4 py-2 rounded-lg text-sm text-center border border-white/10">
-    ⬅ <span data-lang="home">Home</span>
+      ⬅ <span data-lang="home">Home</span>
     </a>
-    
+
     <!-- Botão de Tradução -->
     <button onclick="toggleLanguage()" class="text-white hover:bg-white/20 transition duration-300 px-4 py-2 rounded-lg text-sm border border-white/10">
-    🌐 <span data-lang="traduzir">Traduzir</span>
+      🌐 <span data-lang="traduzir">Traduzir</span>
     </button>
   </div>
 
@@ -105,26 +106,28 @@
         subtitle: 'Coisas que eu gosto',
         musicas: '🎵 Músicas Favoritas',
         jogos: '🎮 Jogos Favoritos',
-        footer: 'Holy shit, here we go again...'
+        footer: 'Holy shit, here we go again...',
+        home: 'Home',
+        traduzir: 'Traduzir'
       },
       en: {
         title: 'Pedro Rocha',
         subtitle: 'Things I like',
         musicas: '🎵 Favorite Songs',
         jogos: '🎮 Favorite Games',
-        footer: 'Holy shit, here we go again...'
+        footer: 'Holy shit, here we go again...',
+        home: 'Home',
+        traduzir: 'Translate'
       }
     };
 
     function toggleLanguage() {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';
-
       for (const [key, value] of Object.entries(translations[currentLang])) {
         const el = document.querySelector(`[data-lang="${key}"]`);
         if (el) el.textContent = value;
       }
     }
   </script>
-
 </body>
 </html>

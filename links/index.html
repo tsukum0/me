@@ -8,6 +8,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(1rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      opacity: 0;
+      transform: translateY(1rem);
+      animation: fade-in 0.8s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+  </style>
+
   <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
     <!-- Botões no canto superior -->
@@ -50,7 +70,7 @@
     </header>
 
     <!-- Conteúdo principal com lista -->
-    <main class="flex-1 m-8 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white overflow-auto">
+    <main data-aos="fade-up" class="flex-1 m-8 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white overflow-auto">
       <h2 class="text-2xl font-semibold mb-4" data-lang="links">Links</h2>
       <ul class="list-disc pl-5 space-y-2">
         <li><a href="/escola/" class="text-blue-300 hover:underline" data-lang="school">Escola</a></li>

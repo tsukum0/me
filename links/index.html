@@ -6,27 +6,30 @@
     <title data-lang="title">Hello World!</title>
     <link rel="icon" href="https://media.discordapp.net/attachments/1371319048071024672/1378950737069084724/5.png?ex=683e7773&is=683d25f3&hm=5ee102181832597d0566a8e3909415ed0ce98ede140cbfd64ab9d42f7b68a0b0&=&format=webp&quality=lossless&width=960&height=960" type="image/png" />
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
 
-  <style>
-    @keyframes fade-in {
-      from {
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(1rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
         opacity: 0;
         transform: translateY(1rem);
+        animation: fade-in 0.8s ease-out forwards;
+        animation-delay: 0.2s;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in {
-      opacity: 0;
-      transform: translateY(1rem);
-      animation: fade-in 0.8s ease-out forwards;
-      animation-delay: 0.2s;
-    }
-  </style>
+    </style>
+  </head>
 
   <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
@@ -70,7 +73,7 @@
     </header>
 
     <!-- Conteúdo principal com lista -->
-    <main data-aos="fade-up" class="flex-1 m-8 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white overflow-auto">
+    <main data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" class="flex-1 m-8 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white overflow-auto">
       <h2 class="text-2xl font-semibold mb-4" data-lang="links">Links</h2>
       <ul class="list-disc pl-5 space-y-2">
         <li><a href="/escola/" class="text-blue-300 hover:underline" data-lang="school">Escola</a></li>
@@ -119,6 +122,12 @@
           if (el) el.textContent = value;
         }
       }
+    </script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
 
   </body>
